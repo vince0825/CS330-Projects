@@ -1,0 +1,13 @@
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/Fall2025-Project1-vcmadu
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/web.config
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/appsettings.Development.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/appsettings.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/appsettings.Development.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/appsettings.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/Fall2025-Project1-vcmadu.deps.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/Fall2025-Project1-vcmadu.runtimeconfig.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/publish/Fall2025-Project1-vcmadu.staticwebassets.endpoints.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/Fall2025-Project1-vcmadu.dll
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/Fall2025-Project1-vcmadu.deps.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/Fall2025-Project1-vcmadu.runtimeconfig.json
+/Users/vincentmadu/Desktop/degree/Fall2025-Project1-vcmadu/bin/Release/net9.0/publish/Fall2025-Project1-vcmadu.pdb

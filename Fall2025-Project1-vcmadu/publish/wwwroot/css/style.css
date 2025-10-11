@@ -1,0 +1,73 @@
+:root { --bg:#0b132b; --text:#f5f7ff; --accent:#00d1b2; }
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;        /* all text centered */
+}
+
+.wrapper {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+
+#Title {
+  margin: 0 0 .5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#CoverArt {
+  width: min(260px, 40vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;                /* circular image */
+  border: 6px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
+  display: block;
+  margin: 1rem auto;
+}
+
+#Rating { margin: .5rem 0 1rem; font-weight: 600; }
+
+.video { position: relative; width: 100%; max-width: 800px; margin: 0 auto 1rem; }
+.video iframe { width: 100%; aspect-ratio: 16/9; border-radius: 16px; }
+
+#Summary { max-width: 70ch; margin: 0 auto 1rem; line-height: 1.6; }
+
+.actors { list-style: none; padding: 0; margin: 0 0 1rem; }
+.actors li {
+  display: inline-block;
+  padding: .35rem .75rem;
+  margin: .25rem;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+}
+
+a.imdb {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--accent);
+  color: #001;
+  font-weight: 700;
+}
+a.imdb:hover { filter: brightness(1.1); }
+
+footer { margin-top: 1rem; opacity: .75; }

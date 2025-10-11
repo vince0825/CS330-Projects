@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Fall2025-Project1-vcmadu/1.0.0": {
+        "runtime": {
+          "Fall2025-Project1-vcmadu.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fall2025-Project1-vcmadu/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
