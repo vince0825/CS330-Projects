@@ -1,6 +1,11 @@
+# .NET build / user / publish stuff
 bin/
 obj/
 publish/
+*.user
+*.suo
+*.cache
+.vscode/
 
 # macOS system files
 .DS_Store
