@@ -1,0 +1,62 @@
+@model IEnumerable<Spring2026_Project3_vcmadu.Models.Actor>
+@{
+    ViewData["Title"] = "Actors";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="page-header mb-0">🎭 Actors</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i> Add Actor
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped datatable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>IMDB</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var actor in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (actor.Photo != null)
+                            {
+                                <img src="@Url.Action("Photo", "Actors", new { id = actor.Id })"
+                                     class="actor-photo" alt="@actor.Name" style="width:50px;height:50px;" />
+                            }
+                            else
+                            {
+                                <i class="fas fa-user-circle fa-2x text-secondary"></i>
+                            }
+                        </td>
+                        <td>@actor.Name</td>
+                        <td>@actor.Gender</td>
+                        <td>@actor.Age</td>
+                        <td>
+                            <a href="@actor.ImdbLink" target="_blank" class="text-warning">
+                                <i class="fas fa-external-link-alt"></i> IMDB
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@actor.Id"
+                               class="btn btn-sm btn-outline-info me-1">Details</a>
+                            <a asp-action="Edit" asp-route-id="@actor.Id"
+                               class="btn btn-sm btn-outline-warning me-1">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@actor.Id"
+                               class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

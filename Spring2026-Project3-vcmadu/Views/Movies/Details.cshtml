@@ -1,0 +1,77 @@
+@model Spring2026_Project3_vcmadu.ViewModels.MovieDetailsViewModel
+@{
+    ViewData["Title"] = Model.Movie.Title;
+}
+
+<div class="mb-3">
+    <a asp-action="Index" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-arrow-left me-1"></i> Back to Movies
+    </a>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h3 class="mb-0">@Model.Movie.Title</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Genre:</strong> @Model.Movie.Genre</p>
+        <p><strong>Release Date:</strong> @Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</p>
+        <p><strong>IMDB:</strong>
+            <a href="@Model.Movie.ImdbLink" target="_blank" class="text-warning">
+                View on IMDB <i class="fas fa-external-link-alt"></i>
+            </a>
+        </p>
+        @if (!string.IsNullOrEmpty(Model.Movie.Description))
+        {
+            <p><strong>Description:</strong> @Model.Movie.Description</p>
+        }
+
+        @if (Model.Movie.ActorMovies.Any())
+        {
+            <p><strong>Cast:</strong>
+                @string.Join(", ", Model.Movie.ActorMovies.Select(am => am.Actor.Name))
+            </p>
+        }
+    </div>
+</div>
+
+<!-- AI Reviews Section -->
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0"><i class="fas fa-robot me-2"></i>AI-Generated Reviews & Sentiment</h4>
+    </div>
+    <div class="card-body">
+        <div class="sentiment-heading">
+            @Model.OverallSentiment
+            <small class="text-muted ms-2">(Average Score: @Model.AverageCompoundScore.ToString("F3"))</small>
+        </div>
+
+        <table class="table table-striped datatable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Review</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var review in Model.Reviews)
+                {
+                    <tr>
+                        <td>@review.ReviewText</td>
+                        <td>
+                            @{
+                                var badgeClass = review.Sentiment == "Positive" ? "badge-positive"
+                                               : review.Sentiment == "Negative" ? "badge-negative"
+                                               : "badge-neutral";
+                            }
+                            <span class="badge @badgeClass px-2 py-1">
+                                @review.Sentiment
+                            </span>
+                            <small class="text-muted ms-1">(@review.CompoundScore.ToString("F3"))</small>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

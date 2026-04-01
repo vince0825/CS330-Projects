@@ -1,0 +1,50 @@
+@model IEnumerable<Spring2026_Project3_vcmadu.Models.Movie>
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="page-header mb-0">🎬 Movies</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i> Add Movie
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped datatable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    <th>IMDB</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>@movie.Genre</td>
+                        <td>@movie.ReleaseDate.ToString("MMM dd, yyyy")</td>
+                        <td>
+                            <a href="@movie.ImdbLink" target="_blank" class="text-warning">
+                                <i class="fas fa-external-link-alt"></i> IMDB
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@movie.Id"
+                               class="btn btn-sm btn-outline-info me-1">Details</a>
+                            <a asp-action="Edit" asp-route-id="@movie.Id"
+                               class="btn btn-sm btn-outline-warning me-1">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@movie.Id"
+                               class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

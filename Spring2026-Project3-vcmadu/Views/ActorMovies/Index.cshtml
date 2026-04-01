@@ -1,0 +1,38 @@
+@model IEnumerable<Spring2026_Project3_vcmadu.Models.ActorMovie>
+@{
+    ViewData["Title"] = "Actor-Movie Relationships";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="page-header mb-0">🔗 Actor-Movie Relationships</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i> Add Relationship
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped datatable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Actor</th>
+                    <th>Movie</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Actor.Name</td>
+                        <td>@item.Movie.Title</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

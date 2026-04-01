@@ -1,0 +1,44 @@
+@model Spring2026_Project3_vcmadu.Models.Actor
+@{
+    ViewData["Title"] = "Delete Actor";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="fas fa-trash me-2"></i>Delete Actor</h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">Are you sure you want to delete this actor?
+                   This will also remove all movie relationships.</p>
+
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    @if (Model.Photo != null)
+                    {
+                        <img src="@Url.Action("Photo", "Actors", new { id = Model.Id })"
+                             class="actor-photo" alt="@Model.Name" />
+                    }
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">@Model.Name</dd>
+                        <dt class="col-sm-4">Gender</dt>
+                        <dd class="col-sm-8">@Model.Gender</dd>
+                        <dt class="col-sm-4">Age</dt>
+                        <dd class="col-sm-8">@Model.Age</dd>
+                    </dl>
+                </div>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash me-1"></i> Yes, Delete
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
